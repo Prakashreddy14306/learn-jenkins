@@ -95,12 +95,13 @@
         stage('three'){
             steps{
                 script{
-                    withAWS(region: 'us-east-1' , credentials: 'aws-cred')
+                    withAWS(region: 'us-east-1' , credentials: 'aws-cred'){
                     sh """ 
                         echo "hi prakash"
                         echo "hello chinnari"
 
                     """
+                    }
                 }
             }
         }
