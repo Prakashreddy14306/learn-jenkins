@@ -60,8 +60,12 @@
  pipeline{
 
     agent {
+
         label 'Agent-1'
-         }
+    }
+    parameters{
+        choice(name: 'ACTION', choices: ['apply', 'destroy'], description: 'Pick something')
+    }
 
     stages{
         stage('first'){
@@ -75,6 +79,9 @@
             }
         }
         stage('second'){
+             when { 
+                expression { params.ACTION == 'apply'}
+            }
             steps{
                 script{
                     sh """ 
