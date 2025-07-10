@@ -45,7 +45,7 @@ pipeline {
                 echo "The person to greet is: ${params.PERSON}" 
                 echo "The biography is: ${params.BIOGRAPHY}"
                 echo "The toggle value is: ${params.TOGGLE}"    
-                echo "The selected choice is: ${params.CHOICE}"
+                echo "The selected choice is: ${ps.CHOICE}"
                 echo "The password is: ${params.PASSWORD}"
 
                 """
