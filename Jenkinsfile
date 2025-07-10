@@ -5,7 +5,7 @@ pipeline {
         COMPONENT = 'Backend'
         DEPLOY_TO = 'production'
     }
-    Stages {
+    stages{
         stage('test'){
             steps {
                 script {
