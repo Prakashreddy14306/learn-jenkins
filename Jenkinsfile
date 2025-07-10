@@ -30,7 +30,7 @@ pipeline {
             }
         }
     }
- }
+ 
     post {
         always {
             echo "always run this stage"
@@ -45,5 +45,4 @@ pipeline {
             echo "this stage runs only on unstable builds"
         }
 }
-
 }
