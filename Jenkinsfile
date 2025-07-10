@@ -5,6 +5,11 @@ pipeline {
         COMPONENT = 'Backend'
         DEPLOY_TO = 'production'
     }
+    options {
+        disableConcurrentBuilds()
+        timeout(time: 30, unit: 'MINUTES')
+        ansiColor('xterm')
+    }
     parameters {
         string(name: 'PERSON', defaultValue: 'Mr Jenkins', description: 'Who should I say hello to?')
 
