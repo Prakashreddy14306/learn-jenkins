@@ -33,14 +33,7 @@ pipeline {
             }
         }
         stage('Deploy') {
-            // input {
-            //     message "Should we continue?"
-            //     ok "Yes, we should."
-            //     submitter "alice,bob"
-            //     parameters {
-            //         string(name: 'PERSON', defaultValue: 'Mr Jenkins', description: 'Who should I say hello to?')
-            //     }
-            // }
+            
             steps {
                 
                 sh """
@@ -48,7 +41,22 @@ pipeline {
                 echo "This is a test deployment script"
                 echo "You can replace this with actual deployment commands"
                 echo "For example, you might run a script or use a deployment tool"
+        
+                echo "The person to greet is: ${params.PERSON}" 
+                echo "The biography is: ${params.BIOGRAPHY}"
+                echo "The toggle value is: ${params.TOGGLE}"    
+                echo "The selected choice is: ${params.CHOICE}"
+                echo "The password is: ${params.PASSWORD}"
+
                 """
+            }
+        }
+        stage('Post Actions') {
+            
+            steps {
+                script {
+                    echo "This stage runs after the main stages"
+                }
             }
         }
     }
