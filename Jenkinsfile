@@ -53,7 +53,7 @@ pipeline {
         }
         stage('Post Actions') {
             when {
-                expression { params.TOGGLE }
+                expression { params.PERSON == 'prakash' }
             }
             steps {
                 script {
