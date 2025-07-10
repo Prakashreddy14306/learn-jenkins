@@ -28,6 +28,7 @@ pipeline {
                 echo `deploying the project for $PROJECT - $COMPONENT to $DEPLOY_TO environment`
                 echo "This is a test deployment script"
                 echo "You can replace this with actual deployment commands"
+                echo "For example, you might run a script or use a deployment tool"
                 """
             }
         }
