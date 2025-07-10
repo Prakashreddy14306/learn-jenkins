@@ -52,7 +52,9 @@ pipeline {
             }
         }
         stage('Post Actions') {
-            
+            when {
+                expression { params.TOGGLE }
+            }
             steps {
                 script {
                     echo "This stage runs after the main stages"
