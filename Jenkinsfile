@@ -16,14 +16,14 @@ pipeline {
         stage('Build') {
             steps {
                 script { 
-                    withAWS(region: 'us-east-1', credentials: 'aws-creds')
+                    
                     echo "Building the project for $PROJECT - $COMPONENT"
                 }
             }
         }
         stage('Deploy') {
             steps {
-                withAWS(region: 'us-east-1', credentials: 'aws-creds') {
+                
                 sh """
                 echo `deploying the project for $PROJECT - $COMPONENT to $DEPLOY_TO environment`
                 """
