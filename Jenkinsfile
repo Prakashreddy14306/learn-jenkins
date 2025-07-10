@@ -66,6 +66,14 @@ pipeline {
                 }
             }
         }
+        stage('Colorful Shell') {
+            steps {
+                sh '''
+                    echo -e "\\033[0;32mBuild Successful\\033[0m"
+                    echo -e "\\033[0;31mBuild Failed\\033[0m"
+                '''
+            }
+        }
     }
  
     post {
